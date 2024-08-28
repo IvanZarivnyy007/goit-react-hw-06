@@ -1,13 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  filters: {
-    name: '',
-  },
+  name: '',
 };
 
 export const selectNameFilter = (state) => {
-  return state.filters.filters;
+  return state.filters.name;
 };
 
 export const filtersSlice = createSlice({
@@ -15,7 +13,7 @@ export const filtersSlice = createSlice({
   initialState,
   reducers: {
     changeFilter(state, { payload }) {
-      state.filters((el) => el.id !== payload.id);
+      state.name = payload;
     },
   },
 });
